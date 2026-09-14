@@ -2,7 +2,9 @@
 
 @import "tailwindcss";
 
-
+@theme {
+  --color-primary: #059669;
+}
 
 *{
     font-family: Outfit;
