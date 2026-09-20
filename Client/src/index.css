@@ -1,11 +1,13 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200..800&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #059669;
-}
+  --font-sans: "Outfit", sans-serif;
+  --font-display: "Gemunu Libre", sans-serif;
 
-*{
-    font-family: Outfit;
+  --color-primary: #059669;
+  --color-primary-dark: #047857;
 }
