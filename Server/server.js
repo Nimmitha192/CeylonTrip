@@ -19,12 +19,12 @@ require('./models/Category');
 // Routes
 const authRoutes = require('./routes/authRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
+const destinationRoutes = require('./routes/destinationRoutes');
 
-// Auth routes
+// Mount application routes
 app.use('/api/auth', authRoutes);
-
-// Category routes
 app.use('/api/categories', categoryRoutes);
+app.use('/api/destinations', destinationRoutes);
 
 // MongoDB connection
 const connectDB = async () => {
