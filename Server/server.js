@@ -14,12 +14,17 @@ app.use(express.json());
 
 // Models
 require('./models/Destination');
+require('./models/Category');
 
 // Routes
 const authRoutes = require('./routes/authRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
 
 // Auth routes
 app.use('/api/auth', authRoutes);
+
+// Category routes
+app.use('/api/categories', categoryRoutes);
 
 // MongoDB connection
 const connectDB = async () => {
