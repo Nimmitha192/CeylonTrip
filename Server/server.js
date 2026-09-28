@@ -8,9 +8,20 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 
+// Models
+require('./models/Destination');
+
+// Routes
+const authRoutes = require('./routes/authRoutes');
+
+// Auth routes
+app.use('/api/auth', authRoutes);
+
+// MongoDB connection
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
@@ -23,12 +34,14 @@ const connectDB = async () => {
 
 connectDB();
 
+// Test route
 app.get('/', (req, res) => {
   res.json({
     message: 'LankaTrip API is running',
   });
 });
 
+// Start server
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

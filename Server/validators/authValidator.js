@@ -1,12 +1,13 @@
 const validateRegister = (req, res, next) => {
   const { name, email, password, confirmPassword } = req.body;
+
   const errors = [];
 
   if (!name || name.trim().length === 0) {
     errors.push('Full name is required');
   }
 
-  if (!email || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+  if (!email || !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
     errors.push('A valid email address is required');
   }
 
@@ -29,11 +30,13 @@ const validateRegister = (req, res, next) => {
   next();
 };
 
+
 const validateLogin = (req, res, next) => {
   const { email, password } = req.body;
+
   const errors = [];
 
-  if (!email || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+  if (!email || !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
     errors.push('Please enter a valid email address');
   }
 
@@ -52,4 +55,8 @@ const validateLogin = (req, res, next) => {
   next();
 };
 
-module.exports = { validateRegister, validateLogin };
+
+module.exports = {
+  validateRegister,
+  validateLogin,
+};
