@@ -21,12 +21,14 @@ const authRoutes = require('./routes/authRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const destinationRoutes = require('./routes/destinationRoutes');
 const reviewRoutes = require('./routes/reviewRoutes');
+const tripRoutes = require('./routes/tripRoutes');
 
 // Mount application routes
 app.use('/api/auth', authRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/destinations', destinationRoutes);
 app.use('/api/reviews', reviewRoutes);
+app.use('/api/trips', tripRoutes);
 
 // MongoDB connection
 const connectDB = async () => {
