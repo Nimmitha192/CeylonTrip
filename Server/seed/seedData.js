@@ -1,6 +1,7 @@
 const categories = [
   {
     name: 'Cultural Heritage',
+    slug: 'cultural-heritage',
     description: 'Ancient kingdoms, UNESCO World Heritage monuments, sacred temples, and timeless ruins.',
     icon: 'Landmark',
     image: 'https://images.unsplash.com/photo-1588598198321-9735fd52455b?auto=format&fit=crop&w=1000&q=80',
@@ -8,6 +9,7 @@ const categories = [
   },
   {
     name: 'Beaches & Coastal',
+    slug: 'beaches-coastal',
     description: 'Pristine golden sands, turquoise ocean swells, surfing sanctuaries, and tranquil marine life.',
     icon: 'Palmtree',
     image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=1000&q=80',
@@ -15,6 +17,7 @@ const categories = [
   },
   {
     name: 'Hill Country & Tea',
+    slug: 'hill-country-tea',
     description: 'Misty cloud forests, emerald tea estates, cascading waterfalls, and cool mountain retreats.',
     icon: 'Mountain',
     image: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1000&q=80',
@@ -22,6 +25,7 @@ const categories = [
   },
   {
     name: 'Wildlife & Safari',
+    slug: 'wildlife-safari',
     description: 'Encounter roaming Sri Lankan leopards, wild elephant herds, sloth bears, and endemic birds.',
     icon: 'PawPrint',
     image: 'https://images.unsplash.com/photo-1564760055775-d63b17a55c44?auto=format&fit=crop&w=1000&q=80',
@@ -29,6 +33,7 @@ const categories = [
   },
   {
     name: 'Nature & Adventure',
+    slug: 'nature-adventure',
     description: 'White water rapids, highland trekking peaks, hidden rainforests, and adrenaline rushes.',
     icon: 'Compass',
     image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80',
@@ -36,6 +41,7 @@ const categories = [
   },
   {
     name: 'Urban & Modern',
+    slug: 'urban-modern',
     description: 'Cosmopolitan dining, colonial architecture, vibrant street markets, and luxury coastal skylines.',
     icon: 'Building2',
     image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1000&q=80',
