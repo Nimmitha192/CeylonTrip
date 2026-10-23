@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 import sriLanka1 from '../assets/Hero/Dondra.jpg';
 import sriLanka2 from '../assets/Hero/elephants.jpg';
-import sriLanka3 from '../assets/Hero/ella.jpg';
+import sriLanka3 from '../assets/Hero/Ella.jpg';
 import sriLanka4 from '../assets/Hero/Mirissa.jpg';
 import sriLanka5 from '../assets/Hero/Sigiriya.jpg';
 
@@ -75,18 +75,18 @@ export default function HeroSection() {
             Explore the Wonders of Sri Lanka
           </div>
 
-          <h1 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-[1.1] text-left">
+          <h1 className="font-display font-extrabold text-white tracking-tight leading-[1.1] text-left text-3xl sm:text-4xl lg:text-5xl">
             ආයුබෝවන්!
             <br />
 
-            <span className="text-transparent bg-clip-text text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-emerald-400 to-emerald-300">
+            <span className="text-transparent bg-clip-text text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-300">
               Welcome to Sri Lanka
             </span>
           </h1>
 
 
           {/* Description */}
-          <p className="max-w-xl text-base font-normal leading-relaxed text-left sm:text-lg text-slate-200">
+          <p className="max-w-xl text-sm font-normal leading-7 text-left sm:text-base text-slate-200">
               Discover Sri Lanka, plan unforgettable journeys, and explore the island your way.
               From ancient kingdoms and misty mountains to golden beaches and thrilling adventures, 
               experience the beauty of Sri Lanka like never before.
@@ -129,7 +129,7 @@ export default function HeroSection() {
                 20+
               </span>
 
-              <span className="text-xs text-slate-300">
+              <span className="text-xs text-slate-300 sm:text-sm">
                 Curated Destinations
               </span>
 
@@ -142,7 +142,7 @@ export default function HeroSection() {
                 9
               </span>
 
-              <span className="text-xs text-slate-300">
+              <span className="text-xs text-slate-300 sm:text-sm">
                 Provinces Covered
               </span>
 
@@ -156,7 +156,7 @@ export default function HeroSection() {
                 100%
               </span>
 
-              <span className="text-xs text-slate-300">
+              <span className="text-xs text-slate-300 sm:text-sm">
                 Customized Routes
               </span>
 

@@ -14,17 +14,17 @@ const Description = () => {
   return (
     <>
       {/* ================ WHY CEYLONTRIP ============ */}
-      <section className="px-4 py- mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <section className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           
           {/* Left Content */}
           <div className="space-y-7 lg:col-span-6">
             <div>
               <span className="inline-block mb-3 text-xs font-bold tracking-widest uppercase text-emerald-600">
-                The CeylonTrip Advantage
+                The CeylonTrips Advantage
               </span>
 
-              <h2 className="text-3xl font-extrabold leading-tight font-display sm:text-4xl lg:text-5xl text-slate-900">
+              <h2 className="font-extrabold leading-tight font-display text-slate-900 text-2xl sm:text-3xl">
                 Travel Sri Lanka
                 <span className="block text-emerald-600">
                   Your Way
@@ -39,7 +39,7 @@ const Description = () => {
             </p>
 
             <p className="text-sm leading-7 text-slate-600 sm:text-base">
-              CeylonTrip makes planning easier by helping you discover places
+              CeylonTrips makes planning easier by helping you discover places
               that match your interests, create sensible travel routes, and
               build a trip that fits your time and budget.
             </p>
@@ -54,7 +54,7 @@ const Description = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900 sm:text-base">
+                  <h4 className="font-bold text-slate-900 text-sm sm:text-base">
                     Find Places You'll Love
                   </h4>
 
@@ -72,7 +72,7 @@ const Description = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900 sm:text-base">
+                  <h4 className="font-bold text-slate-900 text-sm sm:text-base">
                     Smarter Routes, Less Backtracking
                   </h4>
 
@@ -90,7 +90,7 @@ const Description = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900 sm:text-base">
+                  <h4 className="font-bold text-slate-900 text-sm sm:text-base">
                     Plan Around Your Budget
                   </h4>
 
@@ -110,19 +110,19 @@ const Description = () => {
               <img
                 src={Kandy}
                 alt="Kandy, Sri Lanka"
-                className="w-full h-[400px] sm:h-[500px] object-cover transition-transform duration-700 hover:scale-105"
+                className="w-full h-100 sm:h-125 object-cover transition-transform duration-700 hover:scale-105"
               />
 
               {/* Image Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent" />
 
               {/* Image Text */}
               <div className="absolute bottom-6 right-6">
-                <p className="text-xs font-semibold tracking-widest text-white uppercase">
+                <p className="text-xs font-semibold tracking-widest text-slate-900 uppercase">
                   Explore Sri Lanka
                 </p>
 
-                <h3 className="mt-1 text-2xl font-bold text-white sm:text-3xl font-display">
+                <h3 className="mt-1 font-bold text-slate-900 font-display text-sm sm:text-base">
                   Discover the Beauty of Ceylon
                 </h3>
               </div>
@@ -136,11 +136,11 @@ const Description = () => {
                 </div>
 
                 <div>
-                  <p className="text-xs font-extrabold text-slate-800">
+                  <p className="text-xs font-extrabold text-slate-800 sm:text-sm">
                     Smart Route Planning
                   </p>
 
-                  <p className="mt-0.5 text-[11px] text-slate-500">
+                  <p className="mt-0.5 text-xs text-slate-500 sm:text-sm">
                     Your journey, organized
                   </p>
                 </div>
@@ -148,7 +148,7 @@ const Description = () => {
             </div>
 
             {/* Small Decorative Badge */}
-            <div className="absolute flex items-center gap-2 px-4 py-2 text-xs font-bold bg-white shadow-lg right-5 top-5 rounded-full text-slate-800">
+            <div className="absolute flex items-center gap-2 px-4 py-2 text-xs font-bold bg-white shadow-lg right-5 top-5 rounded-full text-slate-800 sm:text-sm">
               <MapPin className="w-4 h-4 text-emerald-600" />
               Kandy
             </div>
@@ -166,7 +166,7 @@ const Description = () => {
               Simple 3-Step Process
             </span>
 
-            <h2 className="text-3xl font-extrabold font-display sm:text-4xl lg:text-5xl text-slate-900">
+            <h2 className="font-extrabold font-display text-slate-900 text-2xl sm:text-3xl">
               How It Works
             </h2>
 
@@ -182,15 +182,15 @@ const Description = () => {
             {/* Step 1 */}
             <div className="relative p-7 bg-white border border-slate-200 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               
-              <div className="flex items-center justify-center w-12 h-12 mb-6 text-sm font-extrabold text-white rounded-xl bg-emerald-600">
+              <div className="flex items-center justify-center w-12 h-12 mb-6 text-sm font-extrabold text-white rounded-xl bg-emerald-600 sm:text-base">
                 01
               </div>
 
-              <h3 className="text-lg font-bold font-display text-slate-900">
+              <h3 className="font-bold font-display text-slate-900 text-sm sm:text-base">
                 Choose Your Preferences
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+              <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
                 Select your trip duration, starting location, budget,
                 traveler count, and interests such as wildlife, beaches,
                 culture, or adventure.
@@ -200,16 +200,16 @@ const Description = () => {
             {/* Step 2 */}
             <div className="relative p-7 bg-white border border-slate-200 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               
-              <div className="flex items-center justify-center w-12 h-12 mb-6 text-sm font-extrabold text-white rounded-xl bg-emerald-600">
+              <div className="flex items-center justify-center w-12 h-12 mb-6 text-sm font-extrabold text-white rounded-xl bg-emerald-600 sm:text-base">
                 02
               </div>
 
-              <h3 className="text-lg font-bold font-display text-slate-900">
+              <h3 className="font-bold font-display text-slate-900 text-sm sm:text-base">
                 Generate Your Route
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                CeylonTrip evaluates destinations based on your preferences
+              <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
+                CeylonTrips evaluates destinations based on your preferences
                 and creates an organized route designed to reduce unnecessary
                 travel.
               </p>
@@ -218,15 +218,15 @@ const Description = () => {
             {/* Step 3 */}
             <div className="relative p-7 bg-white border border-slate-200 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               
-              <div className="flex items-center justify-center w-12 h-12 mb-6 text-sm font-extrabold text-white rounded-xl bg-emerald-600">
+              <div className="flex items-center justify-center w-12 h-12 mb-6 text-sm font-extrabold text-white rounded-xl bg-emerald-600 sm:text-base">
                 03
               </div>
 
-              <h3 className="text-lg font-bold font-display text-slate-900">
+              <h3 className="font-bold font-display text-slate-900 text-sm sm:text-base">
                 Customize & Travel
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+              <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
                 Explore your interactive map, review estimated costs, adjust
                 destinations, and save your personalized travel plan.
               </p>
@@ -238,14 +238,14 @@ const Description = () => {
           <div className="mt-14 text-center">
             <Link
               to="/planner"
-              className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-extrabold text-white transition-all duration-300 rounded-xl bg-amber-400 hover:bg-amber-600 hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-extrabold text-white transition-all duration-300 rounded-xl bg-amber-400 hover:bg-amber-600 hover:shadow-lg hover:-translate-y-0.5 sm:text-base"
             >
               <Sparkles className="w-4 h-4" />
               Build My Itinerary
               <ArrowRight className="w-4 h-4" />
             </Link>
 
-            <p className="mt-3 text-xs text-slate-500">
+            <p className="mt-3 text-xs text-slate-500 sm:text-sm">
               Start planning your Sri Lankan adventure
             </p>
           </div>

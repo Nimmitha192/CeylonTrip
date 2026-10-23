@@ -9,8 +9,8 @@ export default function ProtectedRoute({ children }) {
   if (loading) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3">
-        <div className="w-10 h-10 border-4 rounded-full border-tropical-200 border-t-tropical-600 animate-spin" />
-        <p className="text-sm font-semibold text-slate-500">Checking authorization...</p>
+        <div className="w-10 h-10 border-4 border-emerald-200 border-t-emerald-600 rounded-full animate-spin" />
+        <p className="text-sm font-semibold text-slate-500 sm:text-base">Checking authorization...</p>
       </div>
     );
   }

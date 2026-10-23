@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import BrandLogo from "./BrandLogo";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -40,31 +41,12 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="flex items-center group"
           >
-            <div className="flex items-center justify-center">
-              <img
-                src="/sri-lanka-map.png"
-                alt="Sri Lanka"
-                className="object-contain w-14 h-14 shrink-0"
-              />
-            </div>
-
-            <div>
-              <span className="flex items-center text-2xl font-bold tracking-tight text-orange-500">
-                Ceylon
-                <span className="text-yellow-500">
-                  Trips
-                </span>
-              </span>
-
-              <span className="block -mt-1 text-[10px] font-semibold tracking-widest text-slate-600 uppercase">
-                Sri Lanka Travel Planner
-              </span>
-            </div>
+            <BrandLogo />
           </NavLink>
 
 
           {/* ================= DESKTOP NAV ================= */}
-          <nav className="items-center hidden gap-1 md:flex lg:gap-2">
+          <nav className="items-center hidden gap-1 lg:flex lg:gap-2">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
@@ -78,18 +60,18 @@ const Navbar = () => {
 
 
           {/* ================= LOGIN / REGISTER ================= */}
-          <div className="items-center hidden gap-3 md:flex">
+          <div className="items-center hidden gap-3 lg:flex">
 
             <NavLink
               to="/login"
-              className="px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-900 hover:bg-slate-50 transition"
+              className="px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-900 hover:bg-slate-50 transition sm:text-base"
             >
               Log In
             </NavLink>
 
             <NavLink
               to="/register"
-              className="px-4 py-2.5 rounded-xl text-sm font-semibold bg-slate-900 text-white hover:bg-slate-700 transition"
+              className="px-4 py-2.5 rounded-xl text-sm font-semibold bg-emerald-600 text-white hover:bg-emerald-700 transition sm:text-base"
             >
               Register
             </NavLink>
@@ -98,7 +80,7 @@ const Navbar = () => {
 
 
           {/* ================= MOBILE BUTTON ================= */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
 
             <button
               type="button"
@@ -123,7 +105,7 @@ const Navbar = () => {
 
       {mobileMenuOpen && (
         <div
-          className="fixed top-[72px] left-0 bottom-0 z-[10000] w-64 bg-white !opacity-100 isolate border-r border-slate-200 shadow-xl md:hidden overflow-y-auto">
+          className="fixed top-18 left-0 bottom-0 z-[10000] w-64 max-w-full bg-white !opacity-100 isolate border-r border-slate-200 shadow-xl lg:hidden overflow-y-auto">
 
           {/* Menu Links */}
           <div className="px-4 pt-4 space-y-2 bg-white">
@@ -150,14 +132,14 @@ const Navbar = () => {
             <NavLink
               to="/login"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-3 text-center rounded-xl text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">
+              className="block py-3 text-center rounded-xl text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition sm:text-base">
               Log In
             </NavLink>
 
             <NavLink
               to="/register"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-3 text-center rounded-xl text-sm font-bold bg-slate-900 text-white hover:bg-slate-700 transition">
+              className="block py-3 text-center rounded-xl text-sm font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition sm:text-base">
               Register
             </NavLink>
 
