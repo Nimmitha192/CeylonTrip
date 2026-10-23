@@ -114,15 +114,15 @@ const Description = () => {
               />
 
               {/* Image Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
               {/* Image Text */}
               <div className="absolute bottom-6 right-6">
-                <p className="text-xs font-semibold tracking-widest text-slate-900 uppercase">
+                <p className="text-xs font-semibold tracking-widest text-white uppercase">
                   Explore Sri Lanka
                 </p>
 
-                <h3 className="mt-1 font-bold text-slate-900 font-display text-sm sm:text-base">
+                <h3 className="mt-1 font-bold text-white font-display text-sm sm:text-base">
                   Discover the Beauty of Ceylon
                 </h3>
               </div>
