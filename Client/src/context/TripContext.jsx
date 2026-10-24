@@ -19,8 +19,12 @@ export const TripProvider = ({ children }) => {
   });
 
   const [generatedTrip, setGeneratedTrip] = useState(() => {
-    const saved = sessionStorage.getItem('lankatrip_draft');
-    return saved ? JSON.parse(saved) : null;
+    try {
+      const saved = sessionStorage.getItem('lankatrip_draft');
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
   });
 
   const [isGenerating, setIsGenerating] = useState(false);

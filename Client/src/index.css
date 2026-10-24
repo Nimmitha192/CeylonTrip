@@ -10,4 +10,51 @@
 
   --color-primary: #059669;
   --color-primary-dark: #047857;
+
+  /* Keep multi-column layouts proportional to the larger UI scale.
+     Breakpoints use the browser's initial font size, not html font-size. */
+  --breakpoint-sm: 50rem;
+  --breakpoint-md: 60rem;
+  --breakpoint-lg: 80rem;
+  --breakpoint-xl: 100rem;
+  --breakpoint-2xl: 120rem;
+
+  --text-caption: 0.7rem;
+  --text-caption--line-height: 1.5;
+  --text-fine: 0.75rem;
+  --text-fine--line-height: 1.5;
+}
+
+@layer base {
+  html {
+    /* 18px on phones, growing to 20px on desktop at default browser settings.
+       Rem-based type, spacing, icons and containers scale together. */
+    font-size: clamp(112.5%, calc(100% + 0.3125vw), 125%);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-width: 0;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+
+  #root {
+    min-height: 100svh;
+    min-width: 0;
+  }
+
+  /* Flex and grid children must be able to shrink when text becomes larger. */
+  :where(main, section, article, aside, nav, form) {
+    min-width: 0;
+  }
+
+}
+
+/* A shared readability floor takes precedence over compact text utilities. */
+:where(input:not([type='checkbox']):not([type='radio']):not([type='range']), select, textarea) {
+  font-size: max(1em, 1rem);
+  max-width: 100%;
 }

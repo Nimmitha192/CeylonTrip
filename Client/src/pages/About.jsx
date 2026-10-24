@@ -32,11 +32,11 @@ const About = () => {
           </h1> 
  
           <p className="w-full text-sm sm:text-base text-slate-600 leading-7"> 
-            CeylonTrip is a smart travel planning platform designed to help 
+            CeylonTrips is a smart travel planning platform designed to help 
             travelers discover the beauty of Sri Lanka and create personalized 
             travel itineraries with ease. From ancient cultural sites and 
             golden beaches to misty mountains, wildlife parks, and vibrant 
-            cities, CeylonTrip brings Sri Lanka's diverse travel experiences 
+            cities, CeylonTrips brings Sri Lanka's diverse travel experiences 
             together in one platform. Our goal is to make trip planning 
             simple, personalized, and efficient while helping travelers 
             discover destinations that match their interests, available time, 
@@ -67,7 +67,7 @@ const About = () => {
             </div> 
             <h3 className="text-sm sm:text-base font-bold font-display text-slate-900">Smart Trip Planning</h3> 
             <p className="text-xs sm:text-sm leading-6 text-slate-600"> 
-                CeylonTrip simplifies travel planning by considering your interests, budget, available time, destination popularity, ratings, and travel distances to create a personalized and convenient journey across Sri Lanka. 
+                CeylonTrips simplifies travel planning by considering your interests, budget, available time, destination popularity, ratings, and travel distances to create a personalized and convenient journey across Sri Lanka. 
             </p> 
         </div> 
  
@@ -77,7 +77,7 @@ const About = () => {
             </div> 
             <h3 className="text-sm sm:text-base font-bold font-display text-slate-900">Discover Destinations on the Map</h3> 
             <p className="text-xs sm:text-sm leading-6 text-slate-600"> 
-                Explore Sri Lankan destinations through an interactive map. CeylonTrip helps users discover nearby attractions, understand locations, visualize their journey, and follow an organized travel route easily. 
+                Explore Sri Lankan destinations through an interactive map. CeylonTrips helps users discover nearby attractions, understand locations, visualize their journey, and follow an organized travel route easily. 
             </p> 
         </div> 
  

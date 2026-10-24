@@ -32,7 +32,7 @@ export default function HeroSection() {
   }, [backgroundImages.length]);
 
   return (
-    <section className="relative flex items-center min-h-[85vh] overflow-hidden bg-slate-950 text-white">
+    <section className="relative flex items-center min-h-[95vh] overflow-hidden bg-slate-950 text-white">
 
       {/* ================= BACKGROUND IMAGES ================= */}
       <div className="absolute inset-0 z-0">
@@ -79,7 +79,7 @@ export default function HeroSection() {
             ආයුබෝවන්!
             <br />
 
-            <span className="text-transparent bg-clip-text text-4xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-emerald-400 to-emerald-300">
+            <span className="text-4xl text-transparent bg-clip-text sm:text-5xl lg:text-6xl bg-gradient-to-r from-emerald-400 to-emerald-300">
               Welcome to Sri Lanka
             </span>
           </h1>
@@ -110,10 +110,7 @@ export default function HeroSection() {
             {/* Explore */}
             <Link
               to="/destinations"
-              className="
-                inline-flex items-center justify-center gap-2 py-4 px-7 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md
-                border border-white/20 text-white text-base font-semibold transition duration-200
-              "
+              className="inline-flex items-center justify-center gap-2 py-4 text-base font-semibold text-white transition duration-200 border  px-7 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border-white/20"
             >
               Explore 20+ Destinations
               <ArrowRight className="w-4 h-4" />
