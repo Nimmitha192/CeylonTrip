@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
       if (storedToken) {
         try {
           const res = await authService.getMe();
-          setUser(res.data);
+          setUser(res);
         } catch (err) {
           console.warn('Session expired or invalid token');
           localStorage.removeItem('lankatrip_token');
@@ -81,7 +81,7 @@ export const AuthProvider = ({ children }) => {
       await userService.addFavorite(destinationId);
       setUser((prev) => ({
         ...prev,
-        favorites: [...prev.favorites, destinationId],
+        favorites: [...(prev.favorites || []), destinationId],
       }));
     }
     return !currentlyFav;
