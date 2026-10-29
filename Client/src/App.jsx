@@ -1,12 +1,14 @@
-
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-// Layout
+// Layouts
 import MainLayout from './layouts/MainLayout';
+import AdminLayout from './layouts/AdminKayout';
 
-// Guard
+// Guards
 import ProtectedRoute from './components/ProtectedRoute';
+import AdminRoute from './components/AdminRoute';
+import { useAuth } from './context/AuthContext';
 
 // Public Pages
 import Home from './pages/Homepage';
@@ -28,41 +30,46 @@ import Profile from './pages/Profile';
 import EditProfile from './pages/EditProfile';
 import UserReviews from './pages/UserReviews';
 
+// Admin Pages
+import AdminDashboard from './pages/admin/AdminDashboard';
+import ManageUsers from './pages/admin/ManageUsers';
+import ManageDestinations from './pages/admin/ManageDestinations';
+import DestinationForm from './pages/admin/DestinationForm';
+import ManageCategories from './pages/admin/ManageCategories';
+import ManageActivities from './pages/admin/ManageActivities';
+import ManageHotels from './pages/admin/ManageHotels';
+import ManageReviews from './pages/admin/ManageReviews';
+import ManageTrips from './pages/admin/ManageTrips';
+
 export default function App() {
+  const { isAdmin } = useAuth();
+
   return (
     <Routes>
-      {/* Public & User Routes */}
+      {/* Public & User Routes in MainLayout */}
       <Route path="/" element={<MainLayout />}>
-
         {/* Public Routes */}
         <Route index element={<Home />} />
         <Route path="destinations" element={<Destinations />} />
-        <Route
-          path="destinations/:idOrSlug"
-          element={<DestinationDetails />}
-        />
+        <Route path="destinations/:idOrSlug" element={<DestinationDetails />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
 
-        {/* Planner & Itinerary */}
+        {/* Public or Semi-Protected Planner & Itinerary */}
         <Route path="planner" element={<TripPlanner />} />
-        <Route
-          path="itinerary"
-          element={<GeneratedItinerary />}
-        />
+        <Route path="itinerary" element={<GeneratedItinerary />} />
 
         {/* Protected User Routes */}
         <Route
           path="dashboard"
           element={
             <ProtectedRoute>
-              <UserDashboard />
+              {isAdmin ? <Navigate to="/admin" replace /> : <UserDashboard />}
             </ProtectedRoute>
           }
         />
-
         <Route
           path="my-trips"
           element={
@@ -71,7 +78,6 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="trips/:id"
           element={
@@ -80,7 +86,6 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="favorites"
           element={
@@ -89,7 +94,6 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="profile"
           element={
@@ -98,7 +102,6 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="profile/edit"
           element={
@@ -107,7 +110,6 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-
         <Route
           path="reviews"
           element={
@@ -116,14 +118,31 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+      </Route>
 
+      {/* Admin Suite in AdminLayout */}
+      <Route
+        path="/admin"
+        element={
+          <AdminRoute>
+            <AdminLayout />
+          </AdminRoute>
+        }
+      >
+        <Route index element={<AdminDashboard />} />
+        <Route path="users" element={<ManageUsers />} />
+        <Route path="destinations" element={<ManageDestinations />} />
+        <Route path="destinations/new" element={<DestinationForm />} />
+        <Route path="destinations/:id/edit" element={<DestinationForm />} />
+        <Route path="categories" element={<ManageCategories />} />
+        <Route path="activities" element={<ManageActivities />} />
+        <Route path="hotels" element={<ManageHotels />} />
+        <Route path="reviews" element={<ManageReviews />} />
+        <Route path="trips" element={<ManageTrips />} />
       </Route>
 
       {/* 404 Fallback */}
-      <Route
-        path="*"
-        element={<Navigate to="/" replace />}
-      />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

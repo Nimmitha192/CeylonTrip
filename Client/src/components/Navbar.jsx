@@ -104,6 +104,7 @@ const Navbar = () => {
               /* ===== NEW: logged-in area (favorites + user dropdown) ===== */
               <div className="flex items-center gap-3">
 
+                {!isAdmin && (
                 <NavLink
                   to="/favorites"
                   className="relative p-2.5 transition rounded-xl text-slate-500 hover:text-rose-600 hover:bg-rose-50"
@@ -116,6 +117,7 @@ const Navbar = () => {
                     </span>
                   )}
                 </NavLink>
+                )}
 
                 <div className="relative" ref={dropdownRef}>
                   <button
@@ -145,6 +147,8 @@ const Navbar = () => {
                       </div>
 
                       <div className="py-1">
+                        {!isAdmin && (
+                        <>
                         <NavLink
                           to="/dashboard"
                           onClick={() => setUserDropdownOpen(false)}
@@ -169,6 +173,8 @@ const Navbar = () => {
                           <Heart className="w-4 h-4" />
                           Favorites
                         </NavLink>
+                        </>
+                        )}
                         <NavLink
                           to="/profile"
                           onClick={() => setUserDropdownOpen(false)}
@@ -279,6 +285,8 @@ const Navbar = () => {
             {isAuthenticated ? (
               /* ===== NEW: logged-in links (mobile) ===== */
               <>
+                {!isAdmin && (
+                <>
                 <NavLink
                   to="/dashboard"
                   onClick={() => setMobileMenuOpen(false)}
@@ -300,6 +308,8 @@ const Navbar = () => {
                 >
                   Favorites ({user?.favorites?.length || 0})
                 </NavLink>
+                </>
+                )}
                 <NavLink
                   to="/profile"
                   onClick={() => setMobileMenuOpen(false)}

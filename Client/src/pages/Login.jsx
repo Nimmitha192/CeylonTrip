@@ -21,9 +21,9 @@ export default function Login() {
     setLoading(true);
 
     try {
-      await login({ email, password });
+      const user = await login({ email, password });
       addToast('Welcome back to CeylonTrips!', 'success');
-      navigate(from, { replace: true });
+      navigate(user.role === 'admin' ? '/admin' : from, { replace: true });
     } catch (err) {
       addToast(err.message || 'Login failed. Please verify your credentials.', 'error');
     } finally {
