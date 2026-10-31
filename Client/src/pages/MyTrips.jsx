@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { tripService } from '../services/tripService';
 import { useToast } from '../context/ToastContext';
+import EditTripModal from '../components/EditTripModal';
 import {
   Luggage,
-  Calendar,
+  Pencil,
   MapPin,
   Clock,
   ArrowRight,
@@ -16,6 +17,7 @@ import { formatCurrency, formatDate } from '../utils/formatters';
 export default function MyTrips() {
   const [trips, setTrips] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [editingTrip, setEditingTrip] = useState(null);
   const { addToast } = useToast();
 
   const fetchTrips = async () => {
@@ -122,7 +124,7 @@ export default function MyTrips() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-3 items-center justify-between">
                 <div>
                   <span className="text-xs uppercase font-bold text-slate-400 block">Est. Cost</span>
                   <span className="font-extrabold text-sm text-slate-900 sm:text-base">
@@ -131,6 +133,15 @@ export default function MyTrips() {
                 </div>
 
                 <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setEditingTrip(trip)}
+                    aria-label={`Edit ${trip.title}`}
+                    className="flex items-center gap-1 p-2 rounded-xl text-emerald-700 hover:bg-emerald-50 text-xs font-bold transition"
+                  >
+                    <Pencil className="w-4 h-4" />
+                    Edit
+                  </button>
                   <button
                     onClick={(e) => handleDeleteTrip(e, trip._id, trip.title)}
                     className="p-2 rounded-xl text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition"
@@ -150,6 +161,14 @@ export default function MyTrips() {
             </div>
           ))}
         </div>
+      )}
+      {editingTrip && (
+        <EditTripModal
+          key={editingTrip._id}
+          trip={editingTrip}
+          onClose={() => setEditingTrip(null)}
+          onSaved={(updatedTrip) => setTrips((current) => current.map((trip) => trip._id === updatedTrip._id ? updatedTrip : trip))}
+        />
       )}
     </div>
   );

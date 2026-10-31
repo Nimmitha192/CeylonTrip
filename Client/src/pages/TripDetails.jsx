@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { tripService } from '../services/tripService';
 import { useToast } from '../context/ToastContext';
+import { useAuth } from '../context/AuthContext';
 import {
   Sparkles,
   Calendar,
@@ -15,18 +16,22 @@ import {
   Moon,
   Hotel,
   Trash2,
+  Pencil,
 } from 'lucide-react';
 import { formatCurrency, formatDate } from '../utils/formatters';
 import { printItinerary, shareTripUrl } from '../utils/exportUtils';
 import InteractiveMap from '../components/InteractiveMap';
 import BudgetChart from '../components/BudgetChart';
+import EditTripModal from '../components/EditTripModal';
 
 export default function TripDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToast } = useToast();
+  const { user, isAdmin } = useAuth();
   const [trip, setTrip] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [editing, setEditing] = useState(false);
 
   useEffect(() => {
     const fetchTrip = async () => {
@@ -69,6 +74,9 @@ export default function TripDetails() {
     }
   };
 
+  const ownerId = typeof trip.user === 'object' ? trip.user?._id : trip.user;
+  const canEdit = !!user && (isAdmin || (!!ownerId && ownerId === user._id));
+
   const handleDelete = async () => {
     if (!window.confirm('Are you sure you want to delete this trip?')) return;
     try {
@@ -83,7 +91,7 @@ export default function TripDetails() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Top navigation */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <Link
           to="/my-trips"
           className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-emerald-700 transition sm:text-sm"
@@ -92,7 +100,17 @@ export default function TripDetails() {
           Back to My Trips
         </Link>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          {canEdit && (
+            <button
+              type="button"
+              onClick={() => setEditing(true)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-50 transition shadow-sm sm:text-sm"
+            >
+              <Pencil className="w-3.5 h-3.5" />
+              Edit Trip
+            </button>
+          )}
           <button
             onClick={handleShare}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-50 transition shadow-sm sm:text-sm"
@@ -116,6 +134,15 @@ export default function TripDetails() {
           </button>
         </div>
       </div>
+
+      {editing && canEdit && (
+        <EditTripModal
+          key={trip._id}
+          trip={trip}
+          onClose={() => setEditing(false)}
+          onSaved={(updatedTrip) => setTrip((current) => ({ ...current, ...updatedTrip }))}
+        />
+      )}
 
       {/* Header Summary */}
       <div className="rounded-3xl bg-emerald-50 text-slate-900 p-6 sm:p-10 shadow-card space-y-4">
